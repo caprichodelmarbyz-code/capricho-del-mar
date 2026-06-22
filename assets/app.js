@@ -76,7 +76,7 @@ const MENU = {
         {es:"Tarta de queso caprichosa", en:"‘Caprichosa’ cheesecake", price:"6,50"},
         {es:"Tarta del trisabuelo", en:"Great-grandfather’s cake", price:"6"},
         {es:"Tarta de zanahoria", en:"Carrot cake", price:"6"},
-        {es:"Crema del chef", en:"Chef’s cream", price:"6"},
+        {es:"Crema del chef", en:"Chef’s cream", price:"6,50"},
         {es:"Coulant", en:"Chocolate coulant", price:"6,50", desc:{es:"25 minutos de elaboración", en:"25 min preparation"}},
       ]},
   ],
@@ -84,54 +84,53 @@ const MENU = {
   vinos: [
     { col:1, t:{es:"Blancos", en:"White"},
       items:[
-        {es:"Alceño Blanco", en:"Alceño Blanco", desc:{es:"Sauvignon Blanc · Jumilla", en:"Sauvignon Blanc · Jumilla"}, price:"13", copa:"3,50"},
-        {es:"Cyatho", en:"Cyatho", desc:{es:"Verdejo · Rueda", en:"Verdejo · Rueda"}, price:"16"},
-        {es:"Vida Salvaje", en:"Vida Salvaje", desc:{es:"Macabeo · Bullas", en:"Macabeo · Bullas"}, price:"20"},
-        {es:"Flor Malvés", en:"Flor Malvés", desc:{es:"Malvasía · Alicante", en:"Malvasía · Alicante"}, price:"18"},
-        {es:"Montenovo", en:"Montenovo", desc:{es:"Godello · Valdeorras", en:"Godello · Valdeorras"}, price:"20"},
-        {es:"Terras Gauda", en:"Terras Gauda", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"22"},
-        {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"24"},
-        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"28"},
+        {es:"Alceño Blanco", en:"Alceño Blanco", img:"assets/vinos/alceno-blanco.png", desc:{es:"Sauvignon Blanc · Jumilla", en:"Sauvignon Blanc · Jumilla"}, price:"13", copa:"3,50"},
+        {es:"Cyatho", en:"Cyatho", img:"assets/vinos/cyatho.png", desc:{es:"Verdejo · Rueda", en:"Verdejo · Rueda"}, price:"16"},
+        {es:"Vida Salvaje", en:"Vida Salvaje", img:"assets/vinos/vida-salvaje.png", desc:{es:"Macabeo · Bullas", en:"Macabeo · Bullas"}, price:"20"},
+        {es:"Flor Malvés", en:"Flor Malvés", img:"assets/vinos/flor-malves.png", desc:{es:"Malvasía · Alicante", en:"Malvasía · Alicante"}, price:"18"},
+        {es:"Montenovo", en:"Montenovo", img:"assets/vinos/montenovo.png", desc:{es:"Godello · Valdeorras", en:"Godello · Valdeorras"}, price:"22"},
+        {es:"Terras Gauda", en:"Terras Gauda", img:"assets/vinos/terras-gauda.png", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"22"},
+        {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", img:"assets/vinos/marfrades-albarino.png", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"24"},
+        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"28"},
+        {es:"Terras Gauda Etiqueta Negra", en:"Terras Gauda Etiqueta Negra", img:"assets/vinos/terras-gauda-negra.png", desc:{es:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · fermentado en barrica", en:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · barrel-fermented"}, price:"44"},
       ]},
 
     { col:1, t:{es:"Rosados", en:"Rosé"},
       items:[
-        {es:"Alceño Rosado", en:"Alceño Rosado", desc:{es:"Monastrell · Syrah · Jumilla", en:"Monastrell · Syrah · Jumilla"}, price:"13", copa:"3,50"},
-        {es:"Ostatu", en:"Ostatu", desc:{es:"Tempranillo · Garnacha · Rioja", en:"Tempranillo · Garnacha · Rioja"}, price:"16", copa:"5"},
+        {es:"Alceño Rosado", en:"Alceño Rosado", img:"assets/vinos/alceno-rosado.png", desc:{es:"Monastrell · Syrah · Jumilla", en:"Monastrell · Syrah · Jumilla"}, price:"13", copa:"3,50"},
+        {es:"Ostatu", en:"Ostatu", img:"assets/vinos/ostatu.png", desc:{es:"Tempranillo · Garnacha · Rioja", en:"Tempranillo · Garnacha · Rioja"}, price:"16", copa:"5"},
       ]},
 
     { col:2, t:{es:"Tintos", en:"Red"},
       items:[
-        {es:"Alceño Tinto", en:"Alceño Tinto", desc:{es:"Monastrell · Jumilla", en:"Monastrell · Jumilla"}, price:"13", copa:"3,50"},
-        {es:"Delit", en:"Delit", desc:{es:"Monastrell · Alicante", en:"Monastrell · Alicante"}, price:"27"},
-        {es:"Pierola", en:"Pierola", desc:{es:"Tempranillo · Crianza · Rioja", en:"Tempranillo · Crianza · Rioja"}, price:"20", copa:"4,50"},
-        {es:"Juan Gil", en:"Juan Gil", desc:{es:"Monastrell · Crianza · Jumilla", en:"Monastrell · Crianza · Jumilla"}, price:"22"},
-        {es:"Traslascuestas", en:"Traslascuestas", desc:{es:"Tempranillo · Roble · Ribera del Duero", en:"Tempranillo · Roble · Ribera del Duero"}, price:"17", copa:"5"},
-        {es:"Muga", en:"Muga", desc:{es:"Tempranillo · Crianza · Rioja", en:"Tempranillo · Crianza · Rioja"}, price:"28"},
-        {es:"Bosque de Matasnos", en:"Bosque de Matasnos", desc:{es:"Tempranillo · Ribera del Duero", en:"Tempranillo · Ribera del Duero"}, price:"38"},
-        {es:"Pago de Carraovejas", en:"Pago de Carraovejas", desc:{es:"Tempranillo · Cabernet · Merlot · Ribera del Duero", en:"Tempranillo · Cabernet · Merlot · Ribera del Duero"}, price:"60"},
-        {es:"Valbuena nº 5 · 2018", en:"Valbuena nº 5 · 2018", desc:{es:"Tempranillo · Reserva · Ribera del Duero", en:"Tempranillo · Reserva · Ribera del Duero"}, price:"210"},
+        {es:"Alceño Tinto", en:"Alceño Tinto", img:"assets/vinos/alceno-tinto.png", desc:{es:"Monastrell · Jumilla", en:"Monastrell · Jumilla"}, price:"13", copa:"3,50"},
+        {es:"Delit", en:"Delit", img:"assets/vinos/delit.png", desc:{es:"Monastrell · Alicante", en:"Monastrell · Alicante"}, price:"27"},
+        {es:"Pierola", en:"Pierola", img:"assets/vinos/pierola.png", desc:{es:"Tempranillo · Crianza · Rioja", en:"Tempranillo · Crianza · Rioja"}, price:"20", copa:"4,50"},
+        {es:"Juan Gil", en:"Juan Gil", img:"assets/vinos/juan-gil.png", desc:{es:"Monastrell · Crianza · Jumilla", en:"Monastrell · Crianza · Jumilla"}, price:"22"},
+        {es:"Traslascuestas", en:"Traslascuestas", img:"assets/vinos/traslascuestas.png", desc:{es:"Tempranillo · Roble · Ribera del Duero", en:"Tempranillo · Roble · Ribera del Duero"}, price:"17", copa:"5"},
+        {es:"Muga", en:"Muga", img:"assets/vinos/muga.png", desc:{es:"Tempranillo · Crianza · Rioja", en:"Tempranillo · Crianza · Rioja"}, price:"28"},
+        {es:"Bosque de Matasnos", en:"Bosque de Matasnos", img:"assets/vinos/bosque-matasnos.png", desc:{es:"Tempranillo · Ribera del Duero", en:"Tempranillo · Ribera del Duero"}, price:"38"},
+        {es:"Pago de Carraovejas", en:"Pago de Carraovejas", img:"assets/vinos/pago-carraovejas.png", desc:{es:"Tempranillo · Cabernet Sauvignon · Merlot · Ribera del Duero", en:"Tempranillo · Cabernet Sauvignon · Merlot · Ribera del Duero"}, price:"60"},
+        {es:"Valbuena nº 5 · 2018", en:"Valbuena nº 5 · 2018", img:"assets/vinos/valbuena.png", desc:{es:"Tempranillo · Reserva · Ribera del Duero", en:"Tempranillo · Reserva · Ribera del Duero"}, price:"210"},
       ]},
 
     { col:2, t:{es:"Espumosos", en:"Sparkling"},
       items:[
-        {es:"Jaume Serra", en:"Jaume Serra", desc:{es:"Macabeo · Xarel·lo · Parellada · Brut · Cava", en:"Macabeo · Xarel·lo · Parellada · Brut · Cava"}, price:"14"},
-        {es:"Celler Kripta Franc Brut Reserva", en:"Celler Kripta Franc Brut Reserva", desc:{es:"Macabeo · Xarel·lo · Parellada · Brut · Cava", en:"Macabeo · Xarel·lo · Parellada · Brut · Cava"}, price:"24"},
-        {es:"Recaredo Terrers", en:"Recaredo Terrers", desc:{es:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat", en:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat"}, price:"42"},
-        {es:"Bollinger Special Cuvée", en:"Bollinger Special Cuvée", desc:{es:"Pinot Noir · Chardonnay · Meunier · Champagne", en:"Pinot Noir · Chardonnay · Meunier · Champagne"}, price:"85"},
+        {es:"Celler Kripta Franc", en:"Celler Kripta Franc", img:"assets/vinos/celler-kripta.png", desc:{es:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava", en:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava"}, price:"24"},
+        {es:"Recaredo Terrers", en:"Recaredo Terrers", img:"assets/vinos/recaredo.png", desc:{es:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat", en:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat"}, price:"42"},
+        {es:"Bollinger Special Cuvée", en:"Bollinger Special Cuvée", img:"assets/vinos/bollinger.png", desc:{es:"Pinot Noir · Chardonnay · Meunier · Champagne", en:"Pinot Noir · Chardonnay · Meunier · Champagne"}, price:"85"},
       ]},
   ],
 };
 
 /* ----------------------------------------------------------
-   1b) GALERÍA
-   Cuando tengas fotos: súbelas a assets/galeria/ y añádelas aquí:
-   { src:"assets/galeria/sala.jpg", alt:{es:"Nuestra sala", en:"Our dining room"} }
-   Si la lista está vacía, se muestran marcos "Próximamente".
+   1b) GALERÍA  (automática)
+   Sube tus fotos a la carpeta assets/ con estos nombres:
+     galeria-1.jpg, galeria-2.jpg, galeria-3.jpg ...
+   Aparecen solas en orden. Acepta jpg, jpeg, png o webp.
+   Si no hay ninguna, se muestran marcos "Próximamente".
 ---------------------------------------------------------- */
-const GALLERY = [
-  // { src:"assets/galeria/1.jpg", alt:{es:"Plato de marisco", en:"Seafood dish"} },
-];
+const GALLERY_MAX = 12;  // intenta cargar hasta galeria-12
 
 /* ----------------------------------------------------------
    2) TEXTOS DE INTERFAZ  (i18n)
@@ -222,7 +221,9 @@ function priceCell(item, lang){
 
 function dishHTML(item, lang){
   const desc = item.desc ? `<div class="dish-desc">${item.desc[lang]}</div>` : "";
-  return `<div class="dish">
+  const thumb = item.img ? `<img class="wine-thumb" src="${item.img}" alt="" loading="lazy">` : "";
+  return `<div class="dish${item.img ? ' has-thumb' : ''}">
+      ${thumb}
       <div class="dish-main">
         <div class="dish-name">${item[lang]}</div>${desc}
       </div>
@@ -253,15 +254,34 @@ function renderGallery(lang){
   const grid = document.getElementById("galeria-grid");
   if(!grid) return;
   const wave = `<svg viewBox="0 0 64 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 12 0"/></svg>`;
-  if(GALLERY.length){
-    grid.innerHTML = GALLERY.map(g=>
-      `<figure class="gallery-item"><img src="${g.src}" alt="${g.alt ? g.alt[lang] : ''}" loading="lazy"></figure>`
-    ).join("");
-  } else {
-    const soon = I18N[lang]["gallery.soon"];
-    grid.innerHTML = Array.from({length:6}).map(()=>
-      `<div class="gallery-item is-empty"><div class="ph">${wave}<span>${soon}</span></div></div>`
-    ).join("");
+  const soon = I18N[lang]["gallery.soon"];
+  const exts = ["jpg","jpeg","png","webp","JPG","PNG"];
+
+  // 1) Marcos "Próximamente" de inmediato (la sección nunca se ve vacía)
+  grid.innerHTML = Array.from({length:6}).map(()=>
+    `<div class="gallery-item is-empty"><div class="ph">${wave}<span>${soon}</span></div></div>`
+  ).join("");
+
+  // 2) Intentar cargar las fotos reales; si aparece alguna, sustituyen a los marcos
+  let switched = false;
+  for(let i=1;i<=GALLERY_MAX;i++){
+    (function(idx){
+      const probe = new Image();
+      let e = 0;
+      probe.onload = ()=>{
+        if(!switched){ grid.innerHTML = ""; switched = true; }   // limpia marcos al llegar la 1ª foto
+        const fig = document.createElement("figure");
+        fig.className = "gallery-item";
+        fig.dataset.idx = idx;
+        const im = document.createElement("img");
+        im.src = probe.src; im.alt = "Capricho del Mar by Z"; im.loading = "lazy";
+        fig.appendChild(im);
+        const after = [...grid.children].find(c=> +c.dataset.idx > idx);  // mantener el orden 1,2,3…
+        grid.insertBefore(fig, after || null);
+      };
+      probe.onerror = ()=>{ e++; if(e < exts.length) probe.src = `assets/galeria-${idx}.${exts[e]}`; };
+      probe.src = `assets/galeria-${idx}.${exts[0]}`;
+    })(i);
   }
 }
 

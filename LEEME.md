@@ -38,22 +38,23 @@ capricho-web/
 
 ## Cómo editar
 - **Platos y precios:** `assets/app.js`, objeto `MENU`. `mkt:true`→"S/M"; `copa:"3,50"`→precio por copa.
-- **Galería:** `assets/app.js`, array `GALLERY`. Sube las fotos a `assets/galeria/` y añade líneas como
-  `{ src:"assets/galeria/sala.jpg", alt:{es:"Nuestra sala", en:"Our dining room"} }`.
-  Mientras esté vacío, se muestran marcos "Próximamente".
+- **Galería:** sube tus fotos a la carpeta `assets/` con los nombres `galeria-1.jpg`, `galeria-2.jpg`, `galeria-3.jpg`… (también vale .png o .webp). Aparecen solas y en orden, sin tocar código. Mientras no haya ninguna, se muestran marcos "Próximamente".
 - **Textos** (botones, títulos): objeto `I18N` en el mismo archivo.
 - **Colores:** `assets/styles.css`, bloque `:root` (azul #053068, coral #FD6503).
 - **Horario / teléfono:** en `index.html` (Contacto y pie).
-- **Widget de reservas:** en `reservas.html`, atributo `data-base` del iframe (y del enlace de respaldo). Si cambias el token en Revoflow, actualízalo en esos dos sitios.
+- **Widget de reservas:** en `reservas.html`, atributo `data-base` del iframe. Si cambias el token en Revoflow, actualízalo ahí.
+- **Fotos de los vinos:** están en `assets/vinos/` (una por vino, p. ej. `cyatho.png`). Para cambiar una botella, reemplaza ese archivo manteniendo el nombre.
 
 ## Hecho
 - Logo real + colores exactos (#053068 / #FD6503).
-- Carta y vinos actualizados a las últimas versiones (PDF de junio).
-- Galería lista (a la espera de fotos).
+- Carta y vinos actualizados a las últimas versiones (PDF junio). Crema del chef 6,50 €.
+- Precios alineados a la derecha; cada vino con su foto de botella.
+- Galería automática (a la espera de fotos).
 - Teléfono 613 18 60 34 (pequeño, en el pie).
-- Widget de reservas con ruta /index + botón de respaldo.
 
 ## Pendiente
-- Activar el widget en Revoflow / token válido para que cargue embebido (ver chat).
-- Subir fotos a la galería.
+- Widget de reservas embebido (depende de la política de Revoflow; ver chat).
+- Subir fotos a la galería (`assets/galeria-1.jpg`…).
 - Cuando tengas la URL final, regenero los QR de las cartas digitales.
+
+> Nota: el espumoso **Jaume Serra** no aparece en tu carta de vinos nueva (PDF v4), así que no está en la web. Si lo quieres de vuelta, dímelo (tengo su foto preparada).

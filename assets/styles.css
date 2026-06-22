@@ -220,10 +220,18 @@ a{color:inherit;text-decoration:none}
 .dish-lead{flex:1;border-bottom:1px dotted transparent} /* (no usado, reservado) */
 .dish-price{
   font-family:'Jost',sans-serif;font-weight:500;color:var(--ink);font-size:1.02rem;
-  white-space:nowrap;flex:none;
+  white-space:nowrap;flex:none;text-align:right;
 }
 .dish-price .sm{font-size:.72rem;letter-spacing:.16em;color:var(--coral-deep);font-weight:500;text-transform:uppercase}
 .dish-price .copa{display:block;font-size:.74rem;color:var(--coral-deep);font-weight:400;margin-top:1px}
+
+/* Miniatura de botella (vinos) */
+.dish.has-thumb{gap:12px}
+.wine-thumb{
+  width:88px;height:auto;flex:none;align-self:center;
+  filter:drop-shadow(0 7px 12px rgba(0,0,0,.4));
+}
+@media (max-width:760px){ .wine-thumb{width:66px} }
 
 .menu-foot{
   margin-top:clamp(40px,5vw,60px);text-align:center;
