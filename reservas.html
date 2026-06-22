@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservas · Capricho del Mar by Z</title>
+<meta name="description" content="Reserva tu mesa en Capricho del Mar by Z, Puerto de Mazarrón. Reserva online en menos de un minuto.">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div class="res-page">
+
+  <header class="res-hero">
+    <a href="index.html" class="back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      <span data-i18n="res.back">Volver</span>
+    </a>
+
+    <img class="rl" src="assets/logo-light.png" alt="Capricho del Mar by Z">
+    <h1 data-i18n="res.title">Reserva tu mesa</h1>
+    <p data-i18n="res.sub">Elige día, hora y comensales. Recibirás tu confirmación al instante.</p>
+  </header>
+
+  <main class="res-widget-wrap">
+    <div class="res-widget">
+      <div class="rw-bar"><span class="d"></span><span data-i18n="res.widgetbar">Reserva online</span></div>
+      <iframe
+        id="revo-frame"
+        title="Reservas Capricho del Mar"
+        data-base="https://revoflow.works/widget/booking/index?widget_token=kkyu76bGc3IAKYAqAJrn0cADlG68R0NBH0x1WvWuJiZcar9dAg5Ez9VxDbhtMArGzxVbNYJ3UBCXsB05"
+        loading="eager"
+        allow="payment"></iframe>
+    </div>
+  </main>
+
+  <p class="res-fallback-wrap">
+    <a id="revo-fallback"
+       data-base="https://revoflow.works/widget/booking/index?widget_token=kkyu76bGc3IAKYAqAJrn0cADlG68R0NBH0x1WvWuJiZcar9dAg5Ez9VxDbhtMArGzxVbNYJ3UBCXsB05"
+       href="https://revoflow.works/widget/booking/index?widget_token=kkyu76bGc3IAKYAqAJrn0cADlG68R0NBH0x1WvWuJiZcar9dAg5Ez9VxDbhtMArGzxVbNYJ3UBCXsB05&lang=es"
+       target="_blank" rel="noopener" data-i18n="res.fallback">¿No se carga? Abrir reservas en una pestaña nueva</a>
+  </p>
+
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
