@@ -25,7 +25,7 @@ const MENU = {
 
     { col:1, t:{es:"Para compartir", en:"To share"},
       items:[
-        {es:"Jamón ibérico 100% de cebo", en:"100% Iberian cebo-fed ham", price:"22"},
+        {es:"Jamón ibérico 100% de cebo · Beher", en:"100% cebo-fed Iberian ham · Beher", price:"22"},
         {es:"Lomo ibérico 100% bellota · Joselito", en:"100% acorn-fed Iberian loin · Joselito", price:"13"},
         {es:"Tabla de quesos by Z", en:"Cheese board by Z", price:"17"},
         {es:"Parmigiano Reggiano 24 meses", en:"Parmigiano Reggiano · 24 months", price:"7,50"},
@@ -57,7 +57,7 @@ const MENU = {
       items:[
         {es:"Solomillo de ternera", en:"Beef tenderloin", price:"25"},
         {es:"Solomillo de ternera con escalopa de foie gras", en:"Beef tenderloin with foie gras escalope", price:"28"},
-        {es:"Presa ibérica 100%", en:"100% Iberian presa", price:"21"},
+        {es:"Presa ibérica 100% · Beher", en:"100% Iberian presa · Beher", price:"21"},
         {es:"Entrecot de ternera", en:"Beef entrecôte", price:"23"},
         {es:"Chuleta de vaca vieja · 500 g · maduración +30 días", en:"Aged beef chop · 500 g · 30+ days", price:"34"},
       ]},
@@ -169,6 +169,8 @@ const I18N = {
     "res.widgetbar":"Reserva online",
     "res.ctatext":"Reserva en menos de un minuto. Pulsa el botón y elige día, hora y comensales.",
     "res.ctabtn":"Reservar ahora",
+    "res.groups":"Para grupos de más de 8 personas, escríbenos por WhatsApp y te confirmamos la disponibilidad.",
+    "res.wabtn":"Reservar por WhatsApp",
     "res.help":"¿Prefieres llamar? Escríbenos o telefonéa al restaurante y te ayudamos encantados.",
     "res.fallback":"¿No se carga? Abrir reservas en una pestaña nueva",
   },
@@ -205,6 +207,8 @@ const I18N = {
     "res.widgetbar":"Online booking",
     "res.ctatext":"Book in under a minute. Tap the button and choose date, time and party size.",
     "res.ctabtn":"Book now",
+    "res.groups":"For groups of more than 8, message us on WhatsApp and we’ll confirm availability.",
+    "res.wabtn":"Book via WhatsApp",
     "res.help":"Prefer to call? Message or phone the restaurant and we’ll be glad to help.",
     "res.fallback":"Not loading? Open booking in a new tab",
   }
