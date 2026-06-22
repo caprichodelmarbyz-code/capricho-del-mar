@@ -47,14 +47,14 @@ capricho-web/
 
 ## Hecho
 - Logo real + colores exactos (#053068 / #FD6503).
-- Carta y vinos actualizados a las últimas versiones (PDF junio). Crema del chef 6,50 €.
+- Carta y vinos actualizados (PDF junio). Crema del chef 6,50 €.
 - Precios alineados a la derecha; cada vino con su foto de botella.
-- Galería automática (a la espera de fotos).
+- Galería con 6 fotos (platos, producto y ambiente).
+- Reservas: botón "Reservar ahora" que abre el formulario de Revoflow (ventana centrada en PC, pantalla completa en móvil).
 - Teléfono 613 18 60 34 (pequeño, en el pie).
 
-## Pendiente
-- Widget de reservas embebido (depende de la política de Revoflow; ver chat).
-- Subir fotos a la galería (`assets/galeria-1.jpg`…).
+## Pendiente / opcional
+- (Opcional) Reservas embebido tipo panel sobre la web: requiere el usuario de Revo Flow + su método oficial. El botón actual ya funciona en todos los dispositivos.
 - Cuando tengas la URL final, regenero los QR de las cartas digitales.
 
-> Nota: el espumoso **Jaume Serra** no aparece en tu carta de vinos nueva (PDF v4), así que no está en la web. Si lo quieres de vuelta, dímelo (tengo su foto preparada).
+> Nota: el espumoso **Jaume Serra** no aparece en tu carta nueva (PDF v4), así que no está en la web. Si lo quieres de vuelta, dímelo (tengo su foto preparada).

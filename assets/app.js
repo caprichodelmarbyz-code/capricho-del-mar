@@ -167,6 +167,8 @@ const I18N = {
     "res.back":"Volver", "res.title":"Reserva tu mesa",
     "res.sub":"Elige día, hora y comensales. Recibirás tu confirmación al instante.",
     "res.widgetbar":"Reserva online",
+    "res.ctatext":"Reserva en menos de un minuto. Pulsa el botón y elige día, hora y comensales.",
+    "res.ctabtn":"Reservar ahora",
     "res.help":"¿Prefieres llamar? Escríbenos o telefonéa al restaurante y te ayudamos encantados.",
     "res.fallback":"¿No se carga? Abrir reservas en una pestaña nueva",
   },
@@ -201,6 +203,8 @@ const I18N = {
     "res.back":"Back", "res.title":"Book your table",
     "res.sub":"Pick a date, time and party size. You’ll get instant confirmation.",
     "res.widgetbar":"Online booking",
+    "res.ctatext":"Book in under a minute. Tap the button and choose date, time and party size.",
+    "res.ctabtn":"Book now",
     "res.help":"Prefer to call? Message or phone the restaurant and we’ll be glad to help.",
     "res.fallback":"Not loading? Open booking in a new tab",
   }
@@ -308,9 +312,9 @@ function applyLang(lang){
   if(frame && frame.dataset.base){
     frame.src = frame.dataset.base + "&lang=" + lang;
   }
-  const fb = document.getElementById("revo-fallback");
-  if(fb && fb.dataset.base){
-    fb.href = fb.dataset.base + "&lang=" + lang;
+  const opener = document.getElementById("revo-open");
+  if(opener && opener.dataset.base){
+    opener.href = opener.dataset.base + "&lang=" + lang;
   }
   try{ localStorage.setItem("cdm-lang", lang); }catch(e){}
 }
@@ -357,6 +361,22 @@ function initNav(){
   }
 }
 
+/* Botón de reservas: ventana centrada en escritorio, pestaña en móvil */
+function initReservaButton(){
+  const a = document.getElementById("revo-open");
+  if(!a) return;
+  a.addEventListener("click", (e)=>{
+    if(window.innerWidth >= 820){
+      e.preventDefault();
+      const w = 460, h = Math.min(820, window.innerHeight - 40);
+      const left = Math.max(0, (window.screen.width  - w) / 2);
+      const top  = Math.max(0, (window.screen.height - h) / 2);
+      window.open(a.href, "CaprichoReservas",
+        `width=${w},height=${h},left=${left},top=${top},scrollbars=yes,resizable=yes`);
+    }
+  });
+}
+
 /* ----------------------------------------------------------
    6) ARRANQUE
 ---------------------------------------------------------- */
@@ -365,5 +385,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     b.addEventListener("click", ()=> applyLang(b.dataset.lang));
   });
   initNav();
+  initReservaButton();
   applyLang(getInitialLang());
 });
