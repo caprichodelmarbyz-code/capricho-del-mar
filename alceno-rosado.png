@@ -1,0 +1,460 @@
+/* =========================================================
+   Capricho del Mar by Z — hoja de estilos
+   Identidad: azul marino #15314f · coral #e0763a · crema #f8f2e4
+   Tipos: Cormorant Garamond (display) · Caveat (script) · Jost (texto)
+   ========================================================= */
+
+:root{
+  --navy:#053068;
+  --navy-deep:#03203f;
+  --navy-soft:#0a4585;
+  --coral:#FD6503;
+  --coral-soft:#ff8a3a;
+  --coral-deep:#d65402;
+  --cream:#f8f2e4;
+  --paper:#fffdf8;
+  --ink:#1a2733;
+  --muted:#697785;
+  --line:rgba(5,48,104,.14);
+  --line-on-navy:rgba(248,242,228,.18);
+  --shadow:0 18px 50px -28px rgba(3,32,63,.55);
+  --maxw:1120px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  font-family:'Jost',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- Tipografía utilitaria ---------- */
+.script{font-family:'Caveat',cursive;font-weight:700}
+.serif{font-family:'Cormorant Garamond',serif}
+.eyebrow{
+  font-family:'Jost',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.34em;
+  font-size:.72rem;
+  font-weight:500;
+  color:var(--coral);
+}
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;
+  padding:16px clamp(18px,4vw,48px);
+  background:rgba(13,33,56,.0);
+  transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
+}
+.site-header.scrolled{
+  background:rgba(13,33,56,.96);
+  padding-top:11px;padding-bottom:11px;
+  box-shadow:0 10px 30px -20px rgba(0,0,0,.6);
+}
+.brand-mini{display:flex;align-items:center;gap:11px;color:var(--cream)}
+.brand-mini img{height:50px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.brand-mini .bm-text{line-height:1}
+.brand-mini .bm-name{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:600;letter-spacing:.04em}
+.brand-mini .bm-z{font-family:'Caveat',cursive;font-size:1.15rem;color:var(--coral-soft);margin-left:3px}
+
+.nav{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{
+  color:var(--cream);
+  font-size:.82rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:400;
+  position:relative;
+  padding:6px 0;
+  opacity:.86;
+  transition:opacity .25s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
+  background:var(--coral);transition:width .3s var(--ease);
+}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+.lang-switch{display:flex;align-items:center;border:1px solid var(--line-on-navy);border-radius:999px;overflow:hidden}
+.lang-switch button{
+  background:transparent;border:0;cursor:pointer;
+  color:var(--cream);opacity:.55;
+  font-family:'Jost',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.1em;
+  padding:6px 11px;transition:.25s;
+}
+.lang-switch button.on{background:var(--coral);opacity:1;color:#fff}
+
+.btn-reserve{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--coral);color:#fff;
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem;
+  padding:11px 20px;border-radius:999px;
+  box-shadow:0 10px 24px -10px rgba(224,118,58,.8);
+  transition:transform .25s var(--ease), background .25s, box-shadow .25s;
+}
+.btn-reserve:hover{background:var(--coral-deep);transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(224,118,58,.9)}
+.btn-reserve svg{width:15px;height:15px}
+
+/* Botón hamburguesa móvil */
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;width:34px;height:34px;color:var(--cream)}
+.nav-toggle svg{width:28px;height:28px}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;color:var(--cream);
+  padding:120px 24px 140px;
+  background:
+    radial-gradient(120% 90% at 50% -10%, var(--navy-soft) 0%, var(--navy) 42%, var(--navy-deep) 100%);
+  overflow:hidden;
+}
+.hero::before{ /* textura de olas sutil */
+  content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:
+    repeating-linear-gradient(115deg, transparent 0 38px, rgba(255,255,255,.018) 38px 39px);
+}
+.hero-logo{width:clamp(280px,46vw,460px);height:auto;margin-bottom:26px;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.4));animation:floatIn 1.1s var(--ease) both}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(2.9rem,8vw,5.6rem);line-height:.98;letter-spacing:.01em;
+  animation:floatIn 1.1s .08s var(--ease) both;
+}
+.hero h1 .z{font-family:'Caveat',cursive;color:var(--coral-soft);font-weight:700;display:inline-block;margin-left:.12em}
+.hero-tag{
+  margin-top:18px;font-size:clamp(1rem,2.4vw,1.25rem);font-weight:300;letter-spacing:.02em;
+  color:rgba(248,242,228,.82);max-width:30ch;animation:floatIn 1.1s .16s var(--ease) both;
+}
+.hero-meta{
+  margin-top:30px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center;
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,242,228,.62);
+  animation:floatIn 1.1s .24s var(--ease) both;
+}
+.hero-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--coral)}
+.hero-cta{margin-top:40px;animation:floatIn 1.1s .32s var(--ease) both}
+.hero-cta .btn-reserve{font-size:.84rem;padding:15px 30px}
+
+@keyframes floatIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* Ola decorativa inferior del hero */
+.hero-wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;line-height:0;color:var(--cream)}
+.hero-wave svg{width:100%;height:auto;display:block}
+
+.scroll-hint{
+  margin-top:36px;
+  display:inline-flex;flex-direction:column;align-items:center;gap:8px;
+  font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(248,242,228,.5);
+  animation:floatIn 1.1s .5s var(--ease) both;
+}
+.scroll-hint .line{width:1px;height:30px;background:linear-gradient(var(--coral-soft),transparent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+
+/* =========================================================
+   SECCIONES GENÉRICAS
+   ========================================================= */
+.section{padding:clamp(72px,11vw,128px) 0;position:relative}
+.section.alt{background:var(--paper)}
+.section-head{text-align:center;max-width:660px;margin:0 auto clamp(44px,6vw,68px)}
+.section-head .eyebrow{display:block;margin-bottom:14px}
+.section-head h2{
+  font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--navy);
+  font-size:clamp(2.2rem,5.4vw,3.4rem);line-height:1.04;letter-spacing:.01em;
+}
+.section-head h2 .script{font-family:'Caveat',cursive;color:var(--coral);font-weight:700;font-size:1.18em;line-height:.7}
+.section-head p{margin-top:16px;color:var(--muted);font-size:1.02rem}
+
+/* Separador de ola */
+.wave-rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto 0;color:var(--coral);max-width:200px}
+.wave-rule svg{width:64px;height:auto}
+.wave-rule .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.wave-rule .ln{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+
+/* =========================================================
+   CARTA / VINOS  (menú)
+   ========================================================= */
+.menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(34px,5vw,64px)}
+.menu-col{display:flex;flex-direction:column;gap:clamp(34px,4vw,50px)}
+
+.menu-block{}
+.menu-block-title{
+  display:flex;align-items:baseline;gap:12px;margin-bottom:20px;
+}
+.menu-block-title .mt{
+  font-family:'Caveat',cursive;font-weight:700;color:var(--coral);
+  font-size:2rem;line-height:.9;
+}
+.menu-block-title .ml{flex:1;height:1px;background:var(--line);transform:translateY(-4px)}
+.menu-block-note{
+  font-size:.82rem;color:var(--muted);font-style:italic;margin:-10px 0 16px;letter-spacing:.01em;
+}
+
+.dish{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px dotted rgba(5,48,104,.16)}
+.dish:last-child{border-bottom:0}
+.dish-main{flex:1;min-width:0}
+.dish-name{font-family:'Cormorant Garamond',serif;font-size:1.24rem;font-weight:600;color:var(--navy);letter-spacing:.01em;line-height:1.2}
+.dish-desc{font-size:.84rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.dish-lead{flex:1;border-bottom:1px dotted transparent} /* (no usado, reservado) */
+.dish-price{
+  font-family:'Jost',sans-serif;font-weight:500;color:var(--ink);font-size:1.02rem;
+  white-space:nowrap;flex:none;text-align:right;
+}
+.dish-price .sm{font-size:.72rem;letter-spacing:.16em;color:var(--coral-deep);font-weight:500;text-transform:uppercase}
+.dish-price .copa{display:block;font-size:.74rem;color:var(--coral-deep);font-weight:400;margin-top:1px}
+
+/* Miniatura de botella (vinos) */
+.dish.has-thumb{gap:12px}
+.wine-thumb{
+  width:88px;height:auto;flex:none;align-self:center;
+  filter:drop-shadow(0 7px 12px rgba(0,0,0,.4));
+}
+@media (max-width:760px){ .wine-thumb{width:66px} }
+
+.menu-foot{
+  margin-top:clamp(40px,5vw,60px);text-align:center;
+  border-top:1px solid var(--line);padding-top:26px;
+}
+.menu-foot .pan{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--navy);font-weight:600}
+.menu-foot .legend{font-size:.8rem;color:var(--muted);margin-top:6px;letter-spacing:.04em}
+.menu-foot .credits{font-size:.78rem;color:var(--muted);margin-top:14px;max-width:62ch;margin-inline:auto;font-style:italic;opacity:.85}
+
+/* Vinos: variante azul para contraste */
+#vinos{background:var(--navy);color:var(--cream)}
+#vinos .section-head h2{color:var(--cream)}
+#vinos .section-head h2 .script{color:var(--coral-soft)}
+#vinos .section-head p{color:rgba(248,242,228,.7)}
+#vinos .menu-block-title .mt{color:var(--coral-soft)}
+#vinos .menu-block-title .ml{background:var(--line-on-navy)}
+#vinos .dish{border-bottom-color:rgba(248,242,228,.14)}
+#vinos .dish-name{color:var(--cream)}
+#vinos .dish-desc{color:rgba(248,242,228,.6)}
+#vinos .dish-price{color:var(--cream)}
+#vinos .dish-price .copa,#vinos .dish-price .sm{color:var(--coral-soft)}
+#vinos .menu-foot{border-top-color:var(--line-on-navy)}
+#vinos .menu-foot .legend,#vinos .menu-foot .credits{color:rgba(248,242,228,.6)}
+#vinos .wave-rule .ln{background:linear-gradient(90deg,transparent,var(--line-on-navy),transparent)}
+
+/* =========================================================
+   RESERVA (banda destacada en home)
+   ========================================================= */
+.reserve-band{
+  position:relative;text-align:center;color:var(--cream);
+  padding:clamp(72px,10vw,110px) 24px;overflow:hidden;
+  background:
+    linear-gradient(110deg, var(--coral-deep), var(--coral) 55%, var(--coral-soft));
+}
+.reserve-band::after{
+  content:"";position:absolute;inset:0;opacity:.16;pointer-events:none;
+  background-image:repeating-linear-gradient(125deg,transparent 0 30px,rgba(0,0,0,.12) 30px 31px);
+}
+.reserve-band .inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.reserve-band .eyebrow{color:rgba(255,255,255,.85)}
+.reserve-band h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2rem,5vw,3.1rem);line-height:1.05;margin:12px 0 10px}
+.reserve-band p{color:rgba(255,253,248,.92);font-size:1.05rem;margin-bottom:30px}
+.reserve-band .btn-on-coral{
+  display:inline-flex;align-items:center;gap:9px;background:var(--navy);color:var(--cream);
+  font-weight:500;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;
+  padding:15px 32px;border-radius:999px;transition:transform .25s var(--ease),background .25s;
+  box-shadow:0 16px 34px -16px rgba(13,33,56,.7);
+}
+.reserve-band .btn-on-coral:hover{background:var(--navy-deep);transform:translateY(-2px)}
+.reserve-band .btn-on-coral svg{width:16px;height:16px}
+
+/* =========================================================
+   GALERÍA
+   ========================================================= */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,var(--navy),var(--navy-soft))}
+.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-item.is-empty{display:grid;place-items:center}
+.gallery-item .ph{display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(248,242,228,.55)}
+.gallery-item .ph svg{width:46px;height:auto;color:var(--coral-soft)}
+.gallery-item .ph span{font-size:.66rem;letter-spacing:.26em;text-transform:uppercase}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,52px);align-items:stretch}
+.contact-info{display:flex;flex-direction:column;justify-content:center;gap:26px}
+.cinfo-row{display:flex;gap:16px;align-items:flex-start}
+.cinfo-ic{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--coral-soft)}
+.cinfo-ic svg{width:20px;height:20px}
+.cinfo-row h3{font-family:'Jost',sans-serif;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--muted);font-weight:500;margin-bottom:4px}
+.cinfo-row p{font-family:'Cormorant Garamond',serif;font-size:1.28rem;color:var(--navy);font-weight:600;line-height:1.3}
+.cinfo-row p a:hover{color:var(--coral-deep)}
+.cinfo-row .sub{font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300;color:var(--muted);margin-top:2px}
+.map-card{border-radius:18px;overflow:hidden;box-shadow:var(--shadow);min-height:380px;background:#dfe6ea;border:1px solid var(--line)}
+.map-card iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer{background:var(--navy-deep);color:rgba(248,242,228,.78);padding:60px 24px 38px;text-align:center}
+.site-footer .f-logo{width:min(260px,68vw);height:auto;margin:0 auto 18px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.site-footer .f-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--cream);font-weight:600}
+.site-footer .f-name .z{font-family:'Caveat',cursive;color:var(--coral-soft);margin-left:4px}
+.site-footer .f-links{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin:22px 0;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.site-footer .f-links a{opacity:.75;transition:opacity .25s}
+.site-footer .f-links a:hover{opacity:1;color:var(--coral-soft)}
+.site-footer .f-meta{font-size:.78rem;color:rgba(248,242,228,.5);line-height:1.7;margin-top:10px}
+.site-footer .f-meta a:hover{color:var(--coral-soft)}
+
+/* =========================================================
+   PÁGINA DE RESERVAS
+   ========================================================= */
+.res-page{min-height:100svh;display:flex;flex-direction:column;background:var(--cream)}
+.res-hero{
+  background:radial-gradient(120% 120% at 50% -20%,var(--navy-soft),var(--navy) 55%,var(--navy-deep));
+  color:var(--cream);text-align:center;padding:120px 24px 56px;position:relative;
+}
+.res-hero .back{
+  position:absolute;left:clamp(18px,4vw,40px);top:30px;
+  display:inline-flex;align-items:center;gap:7px;font-size:.78rem;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(248,242,228,.8);transition:color .25s;
+}
+.res-hero .back:hover{color:var(--coral-soft)}
+.res-hero .back svg{width:15px;height:15px}
+.res-hero img.rl{width:min(230px,60vw);height:auto;margin:0 auto 18px}
+.res-hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.02}
+.res-hero h1 .z{font-family:'Caveat',cursive;color:var(--coral-soft)}
+.res-hero p{margin-top:12px;color:rgba(248,242,228,.78);font-size:1.05rem}
+.res-langrow{margin-top:22px;display:flex;justify-content:center}
+
+.res-widget-wrap{flex:1;display:flex;justify-content:center;padding:clamp(26px,5vw,56px) 18px 70px;margin-top:-30px}
+.res-widget{
+  width:100%;max-width:760px;background:var(--paper);
+  border-radius:20px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line);
+  display:flex;flex-direction:column;
+}
+.res-widget .rw-bar{
+  display:flex;align-items:center;gap:9px;padding:14px 20px;border-bottom:1px solid var(--line);
+  background:var(--cream);
+}
+.res-widget .rw-bar .d{width:11px;height:11px;border-radius:50%;background:var(--coral)}
+.res-widget .rw-bar span{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.res-widget iframe{width:100%;border:0;display:block;min-height:760px;background:var(--paper)}
+.res-help{text-align:center;color:var(--muted);font-size:.9rem;margin-top:22px;line-height:1.6}
+.res-help a{color:var(--coral-deep);font-weight:500}
+
+/* Botón de reservas (panel CTA) */
+.res-cta{flex:1;display:flex;justify-content:center;align-items:flex-start;padding:clamp(26px,5vw,56px) 18px 80px;margin-top:-30px}
+.res-cta-card{
+  width:100%;max-width:520px;background:var(--paper);
+  border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line);
+  overflow:hidden;text-align:center;
+}
+.res-cta-card .rw-bar{
+  display:flex;align-items:center;justify-content:center;gap:9px;padding:14px 20px;
+  border-bottom:1px solid var(--line);background:var(--cream);
+}
+.res-cta-card .rw-bar .d{width:11px;height:11px;border-radius:50%;background:var(--coral)}
+.res-cta-card .rw-bar span{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.res-cta-text{color:var(--muted);font-size:1.02rem;line-height:1.65;padding:34px 30px 4px}
+.res-cta-btn{
+  display:inline-block;margin:24px auto 38px;background:var(--coral);color:#fff;
+  font-family:'Jost',sans-serif;font-weight:600;font-size:1.08rem;letter-spacing:.03em;
+  padding:17px 50px;border-radius:44px;box-shadow:0 14px 28px -6px rgba(253,101,3,.6);
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.res-cta-btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -6px rgba(253,101,3,.7)}
+.res-cta-groups{border-top:1px solid var(--line);margin:0 24px;padding:24px 6px 30px;text-align:center}
+.res-cta-groups p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:15px}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;
+  font-family:'Jost',sans-serif;font-weight:600;font-size:.95rem;
+  padding:11px 24px;border-radius:40px;box-shadow:0 9px 18px -6px rgba(37,211,102,.6);
+  transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 13px 22px -6px rgba(37,211,102,.75)}
+.wa-btn svg{flex:none}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:900px){
+  .menu-grid{grid-template-columns:1fr;gap:0}
+  .menu-col+.menu-col{margin-top:clamp(34px,6vw,50px)}
+  .contact-grid{grid-template-columns:1fr}
+  .map-card{min-height:320px;order:2}
+}
+
+@media (max-width:760px){
+  .nav-links{
+    position:fixed;top:0;right:0;bottom:auto;left:auto;width:min(80vw,320px);height:100dvh;z-index:58;
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:30px;
+    background:var(--navy-deep);padding:40px;
+    transform:translateX(100%);transition:transform .4s var(--ease);
+    box-shadow:-20px 0 50px -20px rgba(0,0,0,.6);
+  }
+  body.nav-open .nav-links{transform:translateX(0)}
+  .nav-links a{font-size:1rem}
+  .nav-toggle{display:grid;place-items:center;z-index:70}
+  .nav .lang-switch{order:-1}
+  .header-cta-desktop{display:none}
+  body.nav-open{overflow:hidden}
+  .nav-scrim{position:fixed;top:0;left:0;right:0;bottom:auto;height:100dvh;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:.3s;z-index:55}
+  body.nav-open .nav-scrim{opacity:1;visibility:visible}
+}
+@media (min-width:761px){
+  .nav-scrim{display:none}
+  .nav-links .btn-reserve{display:none} /* en escritorio usamos el CTA suelto del header */
+}
+
+/* Focus visible accesible */
+a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+
+@media (max-width:700px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ===== Alérgenos (estilo Opción 1) ===== */
+.al-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.al-ic{width:27px;height:27px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.al-ic svg{width:16px;height:16px}
+#vinos .al-ic{background:#fff;color:var(--navy)}   /* por si se usaran en vinos */
+.al-block{max-width:var(--maxw);margin:8px auto 0;padding:30px 22px 0;border-top:1px solid var(--line)}
+.al-title{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--coral-deep);font-weight:600;text-align:center;margin-bottom:18px}
+.al-legend{display:flex;flex-wrap:wrap;gap:11px 20px;justify-content:center;max-width:780px;margin:0 auto}
+.al-legend .lg{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--ink)}
+.al-legend .lg .al-ic{width:24px;height:24px}
+.al-legend .lg .al-ic svg{width:14px;height:14px}
+.al-note{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;max-width:680px;margin:22px auto 0}
+
+/* ===== Banda de proveedores (marquee infinito) ===== */
+.marcas{background:var(--paper);padding:20px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marquee{overflow:hidden;width:100%}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:cdm-marquee 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track img{height:48px;width:auto;flex:none;margin:0 34px;opacity:.95}
+@keyframes cdm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:760px){ .marquee-track img{height:38px;margin:0 24px} }
+@media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
+
+/* ===== Instagram en el pie ===== */
+.f-instagram{display:inline-flex;align-items:center;gap:9px;margin-top:20px;color:var(--cream);opacity:.85;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.02em;transition:opacity .2s, transform .2s}
+.f-instagram:hover{opacity:1;transform:translateY(-1px)}
+.f-instagram svg{flex:none}
