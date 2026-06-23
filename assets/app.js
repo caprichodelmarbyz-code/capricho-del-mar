@@ -17,67 +17,67 @@ const MENU = {
     { col:1, t:{es:"Para empezar", en:"To start"},
       note:{es:"Marisco fresco según mercado", en:"Fresh shellfish at market price"},
       items:[
-        {es:"Ostras", en:"Oysters", mkt:true},
-        {es:"Quisquilla", en:"Quisquilla shrimp", mkt:true},
-        {es:"Gamba roja", en:"Red prawn", mkt:true},
-        {es:"Almejas", en:"Clams", mkt:true},
+        {es:"Ostras francesas", en:"French oysters", mkt:true, al:["moluscos"]},
+        {es:"Quisquilla", en:"Quisquilla shrimp", mkt:true, al:["crustaceos"]},
+        {es:"Gamba roja", en:"Red prawn", mkt:true, al:["crustaceos"]},
+        {es:"Almejas", en:"Clams", mkt:true, al:["moluscos"]},
       ]},
 
     { col:1, t:{es:"Para compartir", en:"To share"},
       items:[
-        {es:"Jamón ibérico 100% de cebo · Beher", en:"100% cebo-fed Iberian ham · Beher", price:"22"},
-        {es:"Lomo ibérico 100% bellota · Joselito", en:"100% acorn-fed Iberian loin · Joselito", price:"13"},
-        {es:"Tabla de quesos by Z", en:"Cheese board by Z", price:"17"},
-        {es:"Parmigiano Reggiano 24 meses", en:"Parmigiano Reggiano · 24 months", price:"7,50"},
-        {es:"Marinera con atún rojo", en:"Marinera with bluefin tuna", price:"4", unit:{es:"ud", en:"each"}},
-        {es:"Marinera con anchoa de Santoña", en:"Marinera with Santoña anchovy", price:"3", unit:{es:"ud", en:"each"}},
-        {es:"Hueva de mújol", en:"Cured grey-mullet roe", price:"10"},
-        {es:"Calamar nacional a la andaluza", en:"Andalusian-style fried squid", price:"16"},
-        {es:"Calamar nacional a la plancha", en:"Grilled squid", price:"18"},
-        {es:"Pata de pulpo en base de puré trufado", en:"Octopus leg on truffled potato", price:"22"},
-        {es:"Croqueta de jamón", en:"Ham croquette", price:"2,50", unit:{es:"ud", en:"each"}},
-        {es:"Croqueta de rabo de toro", en:"Oxtail croquette", price:"3,50", unit:{es:"ud", en:"each"}},
-        {es:"Zamburiña a la plancha", en:"Grilled queen scallop", price:"3", unit:{es:"ud", en:"each"}},
-        {es:"Steak tartar", en:"Steak tartare", price:"22"},
-        {es:"Tartar de atún rojo · Fuentes", en:"Bluefin tuna tartare · Fuentes", price:"26"},
-        {es:"Sashimi de atún rojo (akami + toro)", en:"Bluefin tuna sashimi (akami + toro)", price:"20"},
-        {es:"Carpaccio de salmón", en:"Salmon carpaccio", price:"19"},
-        {es:"Brioche de pato", en:"Duck brioche", price:"7,50"},
-        {es:"Flor de alcachofa con escalopa de foie", en:"Artichoke heart with foie escalope", price:"7"},
+        {es:"Jamón ibérico 100% de cebo · Beher", en:"100% cebo-fed Iberian ham · Beher", price:"22", al:[]},
+        {es:"Lomo ibérico 100% bellota · Joselito", en:"100% acorn-fed Iberian loin · Joselito", price:"13", al:[]},
+        {es:"Tabla de quesos by Z", en:"Cheese board by Z", price:"17", desc:{es:"Selección de quesos con sus acompañamientos", en:"A selection of cheeses with garnishes"}, al:["lacteos"]},
+        {es:"Parmigiano Reggiano 24 meses", en:"Parmigiano Reggiano · 24 months", price:"7,50", desc:{es:"Escamas italianas imprescindibles en carta", en:"Italian shavings, a menu essential"}, al:["lacteos"]},
+        {es:"Marinera con atún rojo", en:"Marinera with bluefin tuna", price:"4", unit:{es:"ud", en:"each"}, desc:{es:"La que no puede faltar", en:"The one you can't miss"}, al:["gluten","huevos","pescado"]},
+        {es:"Marinera con anchoa de Santoña", en:"Marinera with Santoña anchovy", price:"3", unit:{es:"ud", en:"each"}, al:["gluten","huevos","pescado"]},
+        {es:"Hueva de mújol", en:"Cured grey-mullet roe", price:"10", al:["pescado"]},
+        {es:"Calamar nacional a la andaluza", en:"Andalusian-style fried squid", price:"16", desc:{es:"Rebozado ligero y bien frito", en:"Lightly battered and crisp-fried"}, al:["moluscos","gluten"]},
+        {es:"Calamar nacional a la plancha", en:"Grilled squid", price:"18", desc:{es:"Corte japonés (ikayaki), muy tierno", en:"Japanese cut (ikayaki), very tender"}, al:["moluscos"]},
+        {es:"Pata de pulpo en base de puré trufado", en:"Octopus leg on truffled potato", price:"22", desc:{es:"Pulpo meloso sobre parmentier trufado", en:"Tender octopus on truffled potato"}, al:["moluscos","lacteos"]},
+        {es:"Croqueta de jamón", en:"Ham croquette", price:"2,50", unit:{es:"ud", en:"each"}, desc:{es:"Cremosa, con trocitos de jamón de verdad", en:"Creamy, with real bits of ham"}, al:["gluten","lacteos","huevos"]},
+        {es:"Croqueta de rabo de toro", en:"Oxtail croquette", price:"3,50", unit:{es:"ud", en:"each"}, desc:{es:"Guiso meloso de rabo, crujiente por fuera", en:"Slow-cooked oxtail, crisp outside"}, al:["gluten","lacteos","huevos"]},
+        {es:"Zamburiña a la plancha", en:"Grilled queen scallop", price:"3", unit:{es:"ud", en:"each"}, desc:{es:"A la plancha, en su jugo", en:"Griddled, in its own juices"}, al:["moluscos"]},
+        {es:"Steak tartar", en:"Steak tartare", price:"22", desc:{es:"De solomillo de ternera, cortado a cuchillo", en:"Beef tenderloin, hand-cut"}, al:["huevos","frutossecos","mostaza"]},
+        {es:"Tartar de atún rojo · Fuentes", en:"Bluefin tuna tartare · Fuentes", price:"26", desc:{es:"Ricardo Fuentes, mejor y mayor productor de atún rojo del mundo", en:"Ricardo Fuentes, the world's finest and largest bluefin tuna producer"}, al:["pescado","huevos","moluscos"]},
+        {es:"Sashimi de atún rojo (akami + toro)", en:"Bluefin tuna sashimi (akami + toro)", price:"20", desc:{es:"Dos cortes del atún: magro y ventresca", en:"Two cuts of tuna: lean and belly"}, al:["pescado","gluten"]},
+        {es:"Carpaccio de salmón", en:"Salmon carpaccio", price:"19", al:["pescado"]},
+        {es:"Brioche de pato", en:"Duck brioche", price:"7,50", desc:{es:"Brioche tierno con pato confitado desmigado y un toque dulce", en:"Soft brioche with shredded duck confit and a sweet touch"}, al:["gluten","lacteos","huevos"]},
+        {es:"Flor de alcachofa con escalopa de foie", en:"Artichoke heart with foie escalope", price:"7", desc:{es:"Alcachofa confitada con escalopa de foie, uno de los favoritos de la casa", en:"Confit artichoke with foie escalope, a house favourite"}, al:["gluten","sulfitos"]},
       ]},
 
     { col:2, t:{es:"Ensaladas", en:"Salads"},
       items:[
-        {es:"Tomate partido con bonito graso", en:"Tomato with fatty bonito", price:"16"},
-        {es:"Capricho del mar", en:"Capricho del mar", price:"18"},
-        {es:"Salmón del trópico", en:"Tropical salmon", price:"15"},
+        {es:"Tomate partido con bonito graso", en:"Tomato with fatty bonito", price:"16", desc:{es:"Tomate de temporada y ventresca de bonito", en:"Seasonal tomato and bonito belly"}, al:["pescado"]},
+        {es:"Capricho del mar", en:"Capricho del mar", price:"18", desc:{es:"Nuestra ensalada de la casa, con sabores del mar", en:"Our house salad with flavours of the sea"}, al:["gluten","huevos","lacteos"]},
+        {es:"Salmón del trópico", en:"Tropical salmon", price:"15", desc:{es:"Con mango y vinagreta casera de maracuyá", en:"With mango and homemade passion-fruit vinaigrette"}, al:["pescado"]},
       ]},
 
     { col:2, t:{es:"Carnes", en:"Meats"},
       items:[
-        {es:"Solomillo de ternera", en:"Beef tenderloin", price:"25"},
-        {es:"Solomillo de ternera con escalopa de foie gras", en:"Beef tenderloin with foie gras escalope", price:"28"},
-        {es:"Presa ibérica 100% · Beher", en:"100% Iberian presa · Beher", price:"21"},
-        {es:"Entrecot de ternera", en:"Beef entrecôte", price:"23"},
-        {es:"Chuleta de vaca vieja · 500 g · maduración +30 días", en:"Aged beef chop · 500 g · 30+ days", price:"34"},
+        {es:"Solomillo de ternera", en:"Beef tenderloin", price:"25", desc:{es:"Tierno y jugoso, el que nunca defrauda", en:"Tender and juicy, never disappoints"}, al:[]},
+        {es:"Solomillo de ternera con escalopa de foie gras", en:"Beef tenderloin with foie gras escalope", price:"28", desc:{es:"Coronado con foie a la plancha", en:"Topped with griddled foie gras"}, al:["sulfitos"]},
+        {es:"Presa ibérica 100% · Beher", en:"100% Iberian presa · Beher", price:"21", desc:{es:"Jugosa y veteada", en:"Juicy and beautifully marbled"}, al:[]},
+        {es:"Entrecot de ternera", en:"Beef entrecôte", price:"23", desc:{es:"Lomo bajo de frisona, bien sabroso", en:"Friesian sirloin, full of flavour"}, al:[]},
+        {es:"Chuleta de vaca vieja · 500 g · maduración +30 días", en:"Aged beef chop · 500 g · 30+ days", price:"34", desc:{es:"Maduración +30 días, intensa, para los más carnívoros", en:"30+ days aged, intense, for true meat lovers"}, al:[]},
       ]},
 
     { col:2, t:{es:"Pescados", en:"Fish"},
       note:{es:"La oferta de pescado puede variar cada día", en:"The fish selection may vary daily"},
       items:[
-        {es:"Lubina", en:"Sea bass", mkt:true},
-        {es:"Gallineta", en:"Scorpionfish", mkt:true},
-        {es:"Rodaballo", en:"Turbot", mkt:true},
-        {es:"Gallo Pedro", en:"John Dory", mkt:true},
+        {es:"Lubina", en:"Sea bass", mkt:true, al:["pescado"]},
+        {es:"Gallineta", en:"Scorpionfish", mkt:true, al:["pescado"]},
+        {es:"Rodaballo", en:"Turbot", mkt:true, al:["pescado"]},
+        {es:"Gallo Pedro", en:"John Dory", mkt:true, al:["pescado"]},
       ]},
 
     { col:2, t:{es:"Los postres", en:"Desserts"},
       items:[
-        {es:"Tarta de queso caprichosa", en:"‘Caprichosa’ cheesecake", price:"6,50"},
-        {es:"Tarta del trisabuelo", en:"Great-grandfather’s cake", price:"6"},
-        {es:"Tarta de zanahoria", en:"Carrot cake", price:"6"},
-        {es:"Crema del chef", en:"Chef’s cream", price:"6,50"},
-        {es:"Coulant", en:"Chocolate coulant", price:"6,50", desc:{es:"25 minutos de elaboración", en:"25 min preparation"}},
+        {es:"Tarta de queso caprichosa", en:"‘Caprichosa’ cheesecake", price:"6,50", desc:{es:"Horneada, nuestra versión más intensa del queso", en:"Baked, our most intense cheesecake"}, al:["lacteos","huevos"]},
+        {es:"Tarta del trisabuelo", en:"Great-grandfather’s cake", price:"6", desc:{es:"Con tres chocolates y café arábico de verdad", en:"Three chocolates and real Arabica coffee"}, al:["gluten","lacteos"]},
+        {es:"Tarta de zanahoria", en:"Carrot cake", price:"6", desc:{es:"Esponjosa, con frosting suave", en:"Fluffy, with a smooth frosting"}, al:["gluten","huevos","lacteos"]},
+        {es:"Crema del chef", en:"Chef’s cream", price:"6", desc:{es:"Postre de cuchara, el secreto del chef y el más aplaudido", en:"The chef's secret spoon dessert, the most applauded"}, al:["lacteos","huevos"]},
+        {es:"Coulant", en:"Chocolate coulant", price:"6,50", desc:{es:"De chocolate, fundente · 25 min de espera", en:"Molten chocolate · 25 min wait"}, al:["gluten","huevos","lacteos","soja"]},
       ]},
   ],
 
@@ -132,6 +132,29 @@ const MENU = {
 ---------------------------------------------------------- */
 const GALLERY_MAX = 12;  // intenta cargar hasta galeria-12
 
+/* Los 14 alérgenos (Reglamento UE 1169/2011): nombre ES/EN + icono SVG (blanco sobre círculo) */
+const ALLERGENS = {
+  gluten:{es:"Gluten",en:"Gluten",svg:'<path d="M12 21V8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 9.4C10.6 8.8 9.5 7.5 9.2 6c1.5.3 2.7 1.4 3.3 2.8M12 9.4c1.4-.6 2.5-1.9 2.8-3.4-1.5.3-2.7 1.4-3.3 2.8M12 13.6c-1.4-.6-2.5-1.9-2.8-3.4 1.5.3 2.7 1.4 3.3 2.8M12 13.6c1.4-.6 2.5-1.9 2.8-3.4-1.5.3-2.7 1.4-3.3 2.8M12 6c-1.4-.6-2.5-1.9-2.8-3.4 1.5.3 2.7 1.4 3.3 2.8M12 6c1.4-.6 2.5-1.9 2.8-3.4-1.5.3-2.7 1.4-3.3 2.8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>'},
+  crustaceos:{es:"Crustáceos",en:"Crustaceans",svg:'<path d="M16.5 6c-4.7 0-8 3.6-8 8.2 0 1.8 1.3 3.3 3 3.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M16.5 6c1.6 0 2.6 1.4 2 3l-.6 1.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M11.5 17.5c1.5.6 3 .2 4-1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9.2 12.3l-2.7-1.1M9.1 14.2l-2.9.3M10.1 10.6l-2-1.9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>'},
+  huevos:{es:"Huevos",en:"Eggs",svg:'<path d="M12 3.2c-3.1 0-5.6 4-5.6 7.9a5.6 5.6 0 0 0 11.2 0c0-3.9-2.5-7.9-5.6-7.9z" fill="none" stroke="currentColor" stroke-width="1.5"/>'},
+  pescado:{es:"Pescado",en:"Fish",svg:'<path d="M13.5 12c0 2.6-2.6 4.6-5.6 4.6S2.3 14.6 2.3 12 4.9 7.4 7.9 7.4 13.5 9.4 13.5 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M13.2 12l7.5-3.6v7.2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="6" cy="10.8" r="1" fill="currentColor"/>'},
+  cacahuetes:{es:"Cacahuetes",en:"Peanuts",svg:'<path d="M12 3c-2.2 0-3.6 1.7-3.6 3.6 0 1.4.7 2.2.7 3.4S8.4 13 8.4 14.4C8.4 16.3 9.8 18 12 18s3.6-1.7 3.6-3.6c0-1.4-.7-2.2-.7-3.4s.7-2 .7-3.4C15.6 4.7 14.2 3 12 3z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9 10.5h6" fill="none" stroke="currentColor" stroke-width="1.1"/>'},
+  soja:{es:"Soja",en:"Soy",svg:'<path d="M12 21v-9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 12c-3 0-5-2-5-5 3 0 5 2 5 5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 14c3 0 5-2 5-5-3 0-5 2-5 5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>'},
+  lacteos:{es:"Lácteos",en:"Milk",svg:'<path d="M8.2 21V9.2l3.8-3 3.8 3V21z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.2 9.2h7.6M9.6 13.5h4.8v3.2H9.6z" fill="none" stroke="currentColor" stroke-width="1.3"/>'},
+  frutossecos:{es:"Frutos secos",en:"Tree nuts",svg:'<path d="M6.5 9.5h11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7.5 9.5c0 4 2 9.5 4.5 9.5s4.5-5.5 4.5-9.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9.5c0-2.5 1.8-4.5 4-4.5s4 2 4 4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 5V3.6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>'},
+  apio:{es:"Apio",en:"Celery",svg:'<path d="M9 21c-.5-4-.5-8 0-12M12 21c0-5 0-10 0-14M15 21c.5-4 .5-8 0-12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M9 9.5c-1-1-1.5-2.6-1.2-4.2M15 9.5c1-1 1.5-2.6 1.2-4.2M13.6 4c-1 .8-1.6 2-1.6 3.4M10.4 4c1 .8 1.6 2 1.6 3.4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>'},
+  mostaza:{es:"Mostaza",en:"Mustard",svg:'<path d="M10.5 3h3v2.2l1.2 1.8c.2.3.3.7.3 1.1V19a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2V8.1c0-.4.1-.8.3-1.1l1.2-1.8V3z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 12h5" fill="none" stroke="currentColor" stroke-width="1.2"/>'},
+  sesamo:{es:"Sésamo",en:"Sesame",svg:'<g fill="currentColor"><ellipse cx="9" cy="9.5" rx="1.5" ry="2.5" transform="rotate(-28 9 9.5)"/><ellipse cx="15" cy="10.5" rx="1.5" ry="2.5" transform="rotate(22 15 10.5)"/><ellipse cx="11.5" cy="15" rx="1.5" ry="2.5" transform="rotate(-8 11.5 15)"/></g>'},
+  sulfitos:{es:"Sulfitos",en:"Sulphites",svg:'<path d="M8 3.5h8c-.2 4-2 6.5-4 6.5S8.2 7.5 8 3.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v8M8.5 20.5h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'},
+  altramuces:{es:"Altramuces",en:"Lupin",svg:'<g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="9" r="2.4"/><circle cx="15" cy="11" r="2.4"/><circle cx="11" cy="15.5" r="2.4"/></g>'},
+  moluscos:{es:"Moluscos",en:"Molluscs",svg:'<path d="M12 20.5c-4.8 0-8-3.8-8-8.6 0-1 .9-1.6 1.8-1l6.2 4 6.2-4c.9-.6 1.8 0 1.8 1 0 4.8-3.2 8.6-8 8.6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 20.5v-6M8.5 19l.8-5M15.5 19l-.8-5" fill="none" stroke="currentColor" stroke-width="1.2"/>'},
+};
+const ALLERGEN_ORDER = ["gluten","crustaceos","huevos","pescado","cacahuetes","soja","lacteos","frutossecos","apio","mostaza","sesamo","sulfitos","altramuces","moluscos"];
+function alIcon(k, lang){
+  const a = ALLERGENS[k]; if(!a) return "";
+  return `<span class="al-ic" title="${a[lang]}" aria-label="${a[lang]}"><svg viewBox="0 0 24 24" aria-hidden="true">${a.svg}</svg></span>`;
+}
+
 /* ----------------------------------------------------------
    2) TEXTOS DE INTERFAZ  (i18n)
 ---------------------------------------------------------- */
@@ -153,6 +176,8 @@ const I18N = {
     "gallery.eyebrow":"El ambiente", "gallery.title1":"Nuestra", "gallery.title2":"casa",
     "gallery.sub":"Un rincón marinero en el Puerto de Mazarrón.",
     "gallery.soon":"Próximamente",
+    "al.title":"Alérgenos",
+    "al.note":"Información sobre alérgenos · Reglamento (UE) 1169/2011. Nuestros platos se elaboran en una cocina donde se manipulan todos los alérgenos, por lo que pueden contener trazas. Si tiene alguna alergia o intolerancia, informe a nuestro personal antes de pedir.",
     "reserve.eyebrow":"Tu mesa te espera", "reserve.title":"Reserva tu mesa",
     "reserve.sub":"Asegura tu sitio en sala o terraza. Reserva online en menos de un minuto.",
     "reserve.btn":"Reservar ahora",
@@ -191,6 +216,8 @@ const I18N = {
     "gallery.eyebrow":"The atmosphere", "gallery.title1":"Our", "gallery.title2":"place",
     "gallery.sub":"A seaside corner in Puerto de Mazarrón.",
     "gallery.soon":"Coming soon",
+    "al.title":"Allergens",
+    "al.note":"Allergen information · Regulation (EU) 1169/2011. Our dishes are prepared in a kitchen that handles all allergens, so traces may be present. If you have any allergy or intolerance, please inform our staff before ordering.",
     "reserve.eyebrow":"Your table awaits", "reserve.title":"Book your table",
     "reserve.sub":"Secure your spot indoors or on the terrace. Book online in under a minute.",
     "reserve.btn":"Book now",
@@ -230,13 +257,25 @@ function priceCell(item, lang){
 function dishHTML(item, lang){
   const desc = item.desc ? `<div class="dish-desc">${item.desc[lang]}</div>` : "";
   const thumb = item.img ? `<img class="wine-thumb" src="${item.img}" alt="" loading="lazy">` : "";
+  const al = (item.al && item.al.length)
+    ? `<div class="al-row">${item.al.map(k=>alIcon(k,lang)).join("")}</div>` : "";
   return `<div class="dish${item.img ? ' has-thumb' : ''}">
       ${thumb}
       <div class="dish-main">
-        <div class="dish-name">${item[lang]}</div>${desc}
+        <div class="dish-name">${item[lang]}</div>${desc}${al}
       </div>
       ${priceCell(item, lang)}
     </div>`;
+}
+
+function renderAllergenLegend(lang){
+  const leg = document.getElementById("al-legend");
+  if(leg){
+    leg.innerHTML = ALLERGEN_ORDER.map(k=>
+      `<span class="lg">${alIcon(k,lang)}${ALLERGENS[k][lang]}</span>`).join("");
+  }
+  const note = document.getElementById("al-note");
+  if(note) note.textContent = I18N[lang]["al.note"];
 }
 
 function blockHTML(block, lang){
@@ -304,7 +343,7 @@ function applyLang(lang){
     if(I18N[lang][key] !== undefined) el.textContent = I18N[lang][key];
   });
   // menús (solo si existen en la página)
-  if(document.getElementById("carta-grid")) renderMenu("carta", lang);
+  if(document.getElementById("carta-grid")){ renderMenu("carta", lang); renderAllergenLegend(lang); }
   if(document.getElementById("vinos-grid"))  renderMenu("vinos", lang);
   if(document.getElementById("galeria-grid")) renderGallery(lang);
   // botones de idioma

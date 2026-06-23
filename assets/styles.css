@@ -65,8 +65,7 @@ a{color:inherit;text-decoration:none}
   transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
 }
 .site-header.scrolled{
-  background:rgba(13,33,56,.92);
-  backdrop-filter:blur(10px);
+  background:rgba(13,33,56,.96);
   padding-top:11px;padding-bottom:11px;
   box-shadow:0 10px 30px -20px rgba(0,0,0,.6);
 }
@@ -403,7 +402,7 @@ a{color:inherit;text-decoration:none}
 
 @media (max-width:760px){
   .nav-links{
-    position:fixed;inset:0 0 0 auto;width:min(80vw,320px);
+    position:fixed;top:0;right:0;bottom:auto;left:auto;width:min(80vw,320px);height:100dvh;z-index:58;
     flex-direction:column;align-items:flex-start;justify-content:center;gap:30px;
     background:var(--navy-deep);padding:40px;
     transform:translateX(100%);transition:transform .4s var(--ease);
@@ -415,7 +414,7 @@ a{color:inherit;text-decoration:none}
   .nav .lang-switch{order:-1}
   .header-cta-desktop{display:none}
   body.nav-open{overflow:hidden}
-  .nav-scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:.3s;z-index:55}
+  .nav-scrim{position:fixed;top:0;left:0;right:0;bottom:auto;height:100dvh;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:.3s;z-index:55}
   body.nav-open .nav-scrim{opacity:1;visibility:visible}
 }
 @media (min-width:761px){
@@ -431,3 +430,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
 }
 
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ===== Alérgenos (estilo Opción 1) ===== */
+.al-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.al-ic{width:27px;height:27px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:none}
+.al-ic svg{width:16px;height:16px}
+#vinos .al-ic{background:#fff;color:var(--navy)}   /* por si se usaran en vinos */
+.al-block{max-width:var(--maxw);margin:8px auto 0;padding:30px 22px 0;border-top:1px solid var(--line)}
+.al-title{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--coral-deep);font-weight:600;text-align:center;margin-bottom:18px}
+.al-legend{display:flex;flex-wrap:wrap;gap:11px 20px;justify-content:center;max-width:780px;margin:0 auto}
+.al-legend .lg{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--ink)}
+.al-legend .lg .al-ic{width:24px;height:24px}
+.al-legend .lg .al-ic svg{width:14px;height:14px}
+.al-note{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;max-width:680px;margin:22px auto 0}
+
+/* ===== Banda de proveedores (marquee infinito) ===== */
+.marcas{background:var(--paper);padding:20px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marquee{overflow:hidden;width:100%}
+.marquee-track{display:flex;align-items:center;width:max-content;animation:cdm-marquee 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track img{height:48px;width:auto;flex:none;margin:0 34px;opacity:.95}
+@keyframes cdm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (max-width:760px){ .marquee-track img{height:38px;margin:0 24px} }
+@media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
+
+/* ===== Instagram en el pie ===== */
+.f-instagram{display:inline-flex;align-items:center;gap:9px;margin-top:20px;color:var(--cream);opacity:.85;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.02em;transition:opacity .2s, transform .2s}
+.f-instagram:hover{opacity:1;transform:translateY(-1px)}
+.f-instagram svg{flex:none}
