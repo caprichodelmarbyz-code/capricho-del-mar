@@ -86,12 +86,14 @@ const MENU = {
       items:[
         {es:"Alceño Blanco", en:"Alceño Blanco", img:"assets/vinos/alceno-blanco.png", desc:{es:"Sauvignon Blanc · Jumilla", en:"Sauvignon Blanc · Jumilla"}, price:"13", copa:"3,50"},
         {es:"Cyatho", en:"Cyatho", img:"assets/vinos/cyatho.png", desc:{es:"Verdejo · Rueda", en:"Verdejo · Rueda"}, price:"16"},
+        {es:"José Pariente", en:"José Pariente", img:"assets/vinos/jose-pariente.png", desc:{es:"Verdejo · Rueda", en:"Verdejo · Rueda"}, price:"19"},
         {es:"Vida Salvaje", en:"Vida Salvaje", img:"assets/vinos/vida-salvaje.png", desc:{es:"Macabeo · Bullas", en:"Macabeo · Bullas"}, price:"20"},
         {es:"Flor Malvés", en:"Flor Malvés", img:"assets/vinos/flor-malves.png", desc:{es:"Malvasía · Alicante", en:"Malvasía · Alicante"}, price:"18"},
         {es:"Montenovo", en:"Montenovo", img:"assets/vinos/montenovo.png", desc:{es:"Godello · Valdeorras", en:"Godello · Valdeorras"}, price:"22"},
-        {es:"Terras Gauda", en:"Terras Gauda", img:"assets/vinos/terras-gauda.png", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"22"},
-        {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", img:"assets/vinos/marfrades-albarino.png", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"24"},
-        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"28"},
+        {es:"O Luar do Sil Sobre Lías", en:"O Luar do Sil Sobre Lías", img:"assets/vinos/oluar.png", desc:{es:"Godello sobre lías · Valdeorras", en:"Godello on lees · Valdeorras"}, price:"31"},
+        {es:"Terras Gauda", en:"Terras Gauda", img:"assets/vinos/terras-gauda.png", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"23"},
+        {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", img:"assets/vinos/marfrades-albarino.png", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"27"},
+        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"27"},
         {es:"Terras Gauda Etiqueta Negra", en:"Terras Gauda Etiqueta Negra", img:"assets/vinos/terras-gauda-negra.png", desc:{es:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · fermentado en barrica", en:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · barrel-fermented"}, price:"44"},
       ]},
 
@@ -117,6 +119,7 @@ const MENU = {
     { col:2, t:{es:"Espumosos", en:"Sparkling"},
       items:[
         {es:"Celler Kripta Franc", en:"Celler Kripta Franc", img:"assets/vinos/celler-kripta.png", desc:{es:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava", en:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava"}, price:"24"},
+        {es:"Juvé & Camps Milesimé", en:"Juvé & Camps Milesimé", img:"assets/vinos/juve-camps.png", desc:{es:"Chardonnay · Brut · Corpinnat", en:"Chardonnay · Brut · Corpinnat"}, price:"39"},
         {es:"Recaredo Terrers", en:"Recaredo Terrers", img:"assets/vinos/recaredo.png", desc:{es:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat", en:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat"}, price:"42"},
         {es:"Bollinger Special Cuvée", en:"Bollinger Special Cuvée", img:"assets/vinos/bollinger.png", desc:{es:"Pinot Noir · Chardonnay · Meunier · Champagne", en:"Pinot Noir · Chardonnay · Meunier · Champagne"}, price:"85"},
       ]},
