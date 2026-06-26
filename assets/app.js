@@ -93,7 +93,7 @@ const MENU = {
         {es:"O Luar do Sil Sobre Lías", en:"O Luar do Sil Sobre Lías", img:"assets/vinos/oluar.png", desc:{es:"Godello sobre lías · Valdeorras", en:"Godello on lees · Valdeorras"}, price:"31"},
         {es:"Terras Gauda", en:"Terras Gauda", img:"assets/vinos/terras-gauda.png", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"24"},
         {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", img:"assets/vinos/marfrades-albarino.png", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"28"},
-        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"27"},
+        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"32"},
         {es:"Terras Gauda Etiqueta Negra", en:"Terras Gauda Etiqueta Negra", img:"assets/vinos/terras-gauda-negra.png", desc:{es:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · fermentado en barrica", en:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · barrel-fermented"}, price:"44"},
       ]},
 
