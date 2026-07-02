@@ -93,7 +93,7 @@ const MENU = {
         {es:"O Luar do Sil Sobre Lías", en:"O Luar do Sil Sobre Lías", img:"assets/vinos/oluar.png", desc:{es:"Godello sobre lías · Valdeorras", en:"Godello on lees · Valdeorras"}, price:"31"},
         {es:"Terras Gauda", en:"Terras Gauda", img:"assets/vinos/terras-gauda.png", desc:{es:"Albariño · Caíño · Loureiro · Rías Baixas", en:"Albariño · Caíño · Loureiro · Rías Baixas"}, price:"24"},
         {es:"Mar de Frades Albariño", en:"Mar de Frades Albariño", img:"assets/vinos/marfrades-albarino.png", desc:{es:"Albariño · Rías Baixas", en:"Albariño · Rías Baixas"}, price:"28"},
-        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"32"},
+        {es:"Mar de Frades Godello", en:"Mar de Frades Godello", img:"assets/vinos/marfrades-godello.png", desc:{es:"Godello · Rías Baixas", en:"Godello · Rías Baixas"}, price:"28"},
         {es:"Terras Gauda Etiqueta Negra", en:"Terras Gauda Etiqueta Negra", img:"assets/vinos/terras-gauda-negra.png", desc:{es:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · fermentado en barrica", en:"Albariño · Caíño Blanco · Loureiro · Rías Baixas · barrel-fermented"}, price:"44"},
       ]},
 
@@ -121,6 +121,7 @@ const MENU = {
         {es:"Celler Kripta Franc", en:"Celler Kripta Franc", img:"assets/vinos/celler-kripta.png", desc:{es:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava", en:"Macabeo · Xarel·lo · Parellada · Brut Reserva · Cava"}, price:"24"},
         {es:"Juvé & Camps Milesimé", en:"Juvé & Camps Milesimé", img:"assets/vinos/juve-camps.png", desc:{es:"Chardonnay · Brut · Corpinnat", en:"Chardonnay · Brut · Corpinnat"}, price:"39"},
         {es:"Recaredo Terrers", en:"Recaredo Terrers", img:"assets/vinos/recaredo.png", desc:{es:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat", en:"Xarel·lo · Macabeo · Parellada · Brut Nature · Corpinnat"}, price:"42"},
+        {es:"Louis Roederer Collection 246", en:"Louis Roederer Collection 246", img:"assets/vinos/roederer.png", desc:{es:"Chardonnay · Pinot Noir · Meunier · Brut · Champagne", en:"Chardonnay · Pinot Noir · Meunier · Brut · Champagne"}, price:"79"},
         {es:"Bollinger Special Cuvée", en:"Bollinger Special Cuvée", img:"assets/vinos/bollinger.png", desc:{es:"Pinot Noir · Chardonnay · Meunier · Champagne", en:"Pinot Noir · Chardonnay · Meunier · Champagne"}, price:"85"},
       ]},
   ],
