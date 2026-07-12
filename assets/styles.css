@@ -447,11 +447,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
 /* ===== Banda de proveedores (marquee infinito) ===== */
 .marcas{background:transparent;padding:30px 0 6px;overflow:hidden}
 .marquee{overflow:hidden;width:100%}
-.marquee-track{display:flex;align-items:center;width:max-content;animation:cdm-marquee 32s linear infinite}
+.marquee-track{display:flex;width:max-content;animation:cdm-marquee 34s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-track img{height:48px;width:auto;flex:none;margin:0 34px;opacity:.95}
+.marquee-group{flex:0 0 auto;min-width:100vw;display:flex;align-items:center;justify-content:space-around}
+.marquee-group img{height:48px;width:auto;margin:0 22px;opacity:.95}
 @keyframes cdm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (max-width:760px){ .marquee-track img{height:38px;margin:0 24px} }
+@media (max-width:760px){ .marquee-group img{height:38px;margin:0 16px} }
 @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
 
 /* ===== Síguenos en redes (bajo el mapa) ===== */
