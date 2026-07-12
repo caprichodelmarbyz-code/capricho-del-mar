@@ -445,16 +445,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
 .al-note{text-align:center;color:var(--muted);font-size:.76rem;line-height:1.6;max-width:680px;margin:22px auto 0}
 
 /* ===== Banda de proveedores (marquee infinito) ===== */
-.marcas{background:var(--paper);padding:20px 0;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marcas{background:transparent;padding:30px 0 6px;overflow:hidden}
 .marquee{overflow:hidden;width:100%}
-.marquee-track{display:flex;align-items:center;width:max-content;animation:cdm-marquee 32s linear infinite}
+.marquee-track{display:flex;width:max-content;animation:cdm-marquee 34s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
-.marquee-track img{height:48px;width:auto;flex:none;margin:0 34px;opacity:.95}
+.marquee-group{flex:0 0 auto;min-width:100vw;display:flex;align-items:center;justify-content:space-around}
+.marquee-group img{height:48px;width:auto;margin:0 22px;opacity:.95}
 @keyframes cdm-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (max-width:760px){ .marquee-track img{height:38px;margin:0 24px} }
+@media (max-width:760px){ .marquee-group img{height:38px;margin:0 16px} }
 @media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
 
-/* ===== Instagram en el pie ===== */
-.f-instagram{display:inline-flex;align-items:center;gap:9px;margin-top:20px;color:var(--cream);opacity:.85;font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.02em;transition:opacity .2s, transform .2s}
-.f-instagram:hover{opacity:1;transform:translateY(-1px)}
-.f-instagram svg{flex:none}
+/* ===== Síguenos en redes (bajo el mapa) ===== */
+.social-follow{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:46px;text-align:center}
+.social-eyebrow{font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--coral-deep);font-weight:600}
+.social-ig{display:inline-flex;align-items:center;gap:11px;color:var(--ink);font-family:'Jost',sans-serif;font-size:1rem;font-weight:500;transition:transform .2s var(--ease)}
+.social-ig:hover{transform:translateY(-2px)}
+.social-ig img{width:34px;height:34px;border-radius:9px}
