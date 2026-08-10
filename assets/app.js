@@ -19,7 +19,7 @@ const MENU = {
       items:[
         {es:"Ostras francesas", en:"French oysters", mkt:true, al:["moluscos"]},
         {es:"Quisquilla", en:"Quisquilla shrimp", mkt:true, al:["crustaceos"]},
-        {es:"Gamba roja", en:"Red prawn", mkt:true, al:["crustaceos"]},
+        {es:"Gamba roja", en:"Red prawn", mkt:true, al:["crustaceos","sulfitos"]},
         {es:"Almejas", en:"Clams", mkt:true, al:["moluscos"]},
       ]},
 
