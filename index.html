@@ -35,6 +35,7 @@
       <a href="#vinos" data-i18n="nav.vinos">Vinos</a>
       <a href="#galeria" data-i18n="nav.galeria">Galería</a>
       <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+      <a href="#empleo" class="nav-empleo" data-i18n="nav.empleo">Trabaja con nosotros</a>
       <a href="reservas.html" class="btn-reserve" data-i18n="nav.reservar">Reservar</a>
     </div>
     <a href="reservas.html" class="btn-reserve header-cta-desktop" data-i18n="nav.reservar">Reservar
@@ -221,6 +222,85 @@
   </div>
 </section>
 
+<!-- ============ TRABAJA CON NOSOTROS ============ -->
+<section class="section empleo" id="empleo">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="job.eyebrow">Únete al equipo</span>
+      <h2><span data-i18n="job.title1">Trabaja con</span> <span class="script" data-i18n="job.title2">nosotros</span></h2>
+      <div class="wave-rule"><span class="dot"></span><span class="ln"></span>
+        <svg viewBox="0 0 64 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 6 q8 -8 16 0 q8 8 16 0 q8 -8 16 0 q8 8 12 0"/></svg>
+        <span class="ln"></span><span class="dot"></span></div>
+      <p data-i18n="job.sub">Buscamos gente con ganas y respeto por el producto. Déjanos tu CV y te escribimos.</p>
+    </div>
+
+    <form class="job-form" id="job-form" novalidate>
+      <div class="jf-grid">
+        <div class="jf-field">
+          <label for="jf-nombre" data-i18n="job.name">Nombre y apellidos</label>
+          <input type="text" id="jf-nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <div class="jf-field">
+          <label for="jf-email" data-i18n="job.email">Email</label>
+          <input type="email" id="jf-email" name="email" autocomplete="email" required>
+        </div>
+        <div class="jf-field">
+          <label for="jf-tel" data-i18n="job.phone">Teléfono</label>
+          <input type="tel" id="jf-tel" name="telefono" autocomplete="tel" required>
+        </div>
+        <div class="jf-field">
+          <label for="jf-puesto" data-i18n="job.role">Puesto</label>
+          <select id="jf-puesto" name="puesto" required>
+            <option value="" data-i18n="job.role.ph">Selecciona un puesto</option>
+            <option value="manager" data-i18n="job.role.manager">Manager</option>
+            <option value="camarero" data-i18n="job.role.camarero">Camarero/a</option>
+            <option value="cocina" data-i18n="job.role.cocina">Cocinero/a</option>
+          </select>
+        </div>
+        <div class="jf-field">
+          <label for="jf-disp" data-i18n="job.avail">Disponibilidad</label>
+          <select id="jf-disp" name="disponibilidad" required>
+            <option value="" data-i18n="job.avail.ph">Selecciona tu disponibilidad</option>
+            <option value="completa" data-i18n="job.avail.full">Jornada completa</option>
+            <option value="parcial" data-i18n="job.avail.part">Media jornada</option>
+            <option value="finde" data-i18n="job.avail.week">Solo fines de semana</option>
+            <option value="temporada" data-i18n="job.avail.season">Temporada de verano</option>
+            <option value="flexible" data-i18n="job.avail.flex">Flexible</option>
+          </select>
+        </div>
+        <div class="jf-field">
+          <label for="jf-inicio" data-i18n="job.start">¿Cuándo podrías empezar?</label>
+          <input type="text" id="jf-inicio" name="inicio" data-i18n-ph="job.start.ph" placeholder="Ej.: de inmediato, en 15 días…">
+        </div>
+      </div>
+
+      <div class="jf-field jf-full">
+        <label for="jf-msg"><span data-i18n="job.msg">Cuéntanos brevemente tu experiencia</span> <span class="jf-opt" data-i18n="job.optional">(opcional)</span></label>
+        <textarea id="jf-msg" name="mensaje" rows="4" data-i18n-ph="job.msg.ph" placeholder="Dónde has trabajado, qué se te da bien…"></textarea>
+      </div>
+
+      <div class="jf-field jf-full">
+        <label data-i18n="job.cv">Tu CV</label>
+        <label class="jf-file" for="jf-cv">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15"/></svg>
+          <span class="jf-file-txt" data-i18n="job.cv.ph">Adjuntar archivo (PDF o Word · máx. 5 MB)</span>
+        </label>
+        <input type="file" id="jf-cv" name="cv" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,application/pdf" hidden>
+      </div>
+
+      <label class="jf-check">
+        <input type="checkbox" id="jf-rgpd" required>
+        <span data-i18n="job.rgpd">Acepto que Capricho del Mar by Z guarde mis datos y mi CV con el único fin de valorar mi candidatura. Puedo pedir su borrado en cualquier momento escribiendo al restaurante.</span>
+      </label>
+
+      <div class="jf-actions">
+        <button type="submit" class="btn-reserve jf-submit" data-i18n="job.send">Enviar candidatura</button>
+        <p class="jf-status" id="jf-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <img class="f-logo" src="assets/logo-light.png" alt="Capricho del Mar by Z">
@@ -229,6 +309,7 @@
     <a href="#vinos" data-i18n="nav.vinos">Vinos</a>
     <a href="#galeria" data-i18n="nav.galeria">Galería</a>
     <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+    <a href="#empleo" data-i18n="nav.empleo">Trabaja con nosotros</a>
     <a href="reservas.html" data-i18n="nav.reservar">Reservar</a>
   </div>
   <div class="f-meta">

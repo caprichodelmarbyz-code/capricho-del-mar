@@ -165,6 +165,30 @@ const I18N = {
   es:{
     "nav.inicio":"Inicio", "nav.carta":"Carta", "nav.vinos":"Vinos", "nav.galeria":"Galería", "nav.contacto":"Contacto",
     "nav.reservar":"Reservar",
+    "nav.empleo":"Trabaja con nosotros",
+    "job.eyebrow":"Únete al equipo", "job.title1":"Trabaja con", "job.title2":"nosotros",
+    "job.sub":"Buscamos gente con ganas y respeto por el producto. Déjanos tu CV y te escribimos.",
+    "job.name":"Nombre y apellidos", "job.email":"Email", "job.phone":"Teléfono",
+    "job.role":"Puesto", "job.role.ph":"Selecciona un puesto",
+    "job.role.manager":"Manager", "job.role.camarero":"Camarero/a",
+    "job.role.cocina":"Cocinero/a",
+    "job.avail":"Disponibilidad", "job.avail.ph":"Selecciona tu disponibilidad",
+    "job.avail.full":"Jornada completa", "job.avail.part":"Media jornada",
+    "job.avail.week":"Solo fines de semana", "job.avail.season":"Temporada de verano",
+    "job.avail.flex":"Flexible",
+    "job.start":"¿Cuándo podrías empezar?", "job.start.ph":"Ej.: de inmediato, en 15 días…",
+    "job.msg":"Cuéntanos brevemente tu experiencia", "job.optional":"(opcional)",
+    "job.msg.ph":"Dónde has trabajado, qué se te da bien…",
+    "job.cv":"Tu CV", "job.cv.ph":"Adjuntar archivo (PDF o Word · máx. 5 MB)",
+    "job.rgpd":"Acepto que Capricho del Mar by Z guarde mis datos y mi CV con el único fin de valorar mi candidatura. Puedo pedir su borrado en cualquier momento escribiendo al restaurante.",
+    "job.send":"Enviar candidatura",
+    "job.sending":"Enviando tu candidatura…",
+    "job.ok":"¡Recibido! Gracias por tu interés. Revisaremos tu CV y te escribiremos si encaja.",
+    "job.err":"No hemos podido enviar tu candidatura. Inténtalo de nuevo en un momento.",
+    "job.err.fields":"Revisa los campos marcados antes de enviar.",
+    "job.err.cv":"Adjunta tu CV para poder enviar la candidatura.",
+    "job.err.size":"El archivo pesa más de 5 MB. Comprímelo o envíalo en PDF.",
+    "job.err.type":"Formato no válido. Acepta PDF, Word, JPG o PNG.",
     "hero.tag":"Cocina de mar y vino blanco en el Puerto de Mazarrón",
     "hero.meta1":"Marisco fresco", "hero.meta2":"Atún rojo · Fuentes", "hero.meta3":"Bodega de autor",
     "hero.scroll":"Descubre la carta",
@@ -206,6 +230,30 @@ const I18N = {
   en:{
     "nav.inicio":"Home", "nav.carta":"Menu", "nav.vinos":"Wines", "nav.galeria":"Gallery", "nav.contacto":"Contact",
     "nav.reservar":"Book",
+    "nav.empleo":"Careers",
+    "job.eyebrow":"Join the team", "job.title1":"Work with", "job.title2":"us",
+    "job.sub":"We look for people with drive and respect for the produce. Leave us your CV and we will be in touch.",
+    "job.name":"Full name", "job.email":"Email", "job.phone":"Phone",
+    "job.role":"Position", "job.role.ph":"Select a position",
+    "job.role.manager":"Manager", "job.role.camarero":"Waiter / waitress",
+    "job.role.cocina":"Chef",
+    "job.avail":"Availability", "job.avail.ph":"Select your availability",
+    "job.avail.full":"Full time", "job.avail.part":"Part time",
+    "job.avail.week":"Weekends only", "job.avail.season":"Summer season",
+    "job.avail.flex":"Flexible",
+    "job.start":"When could you start?", "job.start.ph":"e.g. right away, in two weeks…",
+    "job.msg":"Tell us briefly about your experience", "job.optional":"(optional)",
+    "job.msg.ph":"Where you have worked, what you are good at…",
+    "job.cv":"Your CV", "job.cv.ph":"Attach a file (PDF or Word · max. 5 MB)",
+    "job.rgpd":"I agree that Capricho del Mar by Z may store my details and CV for the sole purpose of assessing my application. I can request their deletion at any time by contacting the restaurant.",
+    "job.send":"Send application",
+    "job.sending":"Sending your application…",
+    "job.ok":"Received! Thanks for your interest. We will review your CV and get in touch if it is a fit.",
+    "job.err":"We could not send your application. Please try again in a moment.",
+    "job.err.fields":"Please check the highlighted fields before sending.",
+    "job.err.cv":"Please attach your CV to send the application.",
+    "job.err.size":"The file is over 5 MB. Please compress it or send it as a PDF.",
+    "job.err.type":"Invalid format. PDF, Word, JPG or PNG accepted.",
     "hero.tag":"Seafood kitchen and white wine in Puerto de Mazarrón",
     "hero.meta1":"Fresh shellfish", "hero.meta2":"Bluefin tuna · Fuentes", "hero.meta3":"Signature wine list",
     "hero.scroll":"See the menu",
@@ -347,6 +395,14 @@ function applyLang(lang){
     const key = el.getAttribute("data-i18n");
     if(I18N[lang][key] !== undefined) el.textContent = I18N[lang][key];
   });
+  // placeholders con data-i18n-ph
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const key = el.getAttribute("data-i18n-ph");
+    if(I18N[lang][key] !== undefined) el.placeholder = I18N[lang][key];
+  });
+  // etiqueta del adjunto: si ya hay archivo elegido, no la pisamos
+  const ft = document.querySelector(".jf-file-txt");
+  if(ft && ft.dataset.file === "1") ft.textContent = ft.dataset.name || ft.textContent;
   // menús (solo si existen en la página)
   if(document.getElementById("carta-grid")){ renderMenu("carta", lang); renderAllergenLegend(lang); }
   if(document.getElementById("vinos-grid"))  renderMenu("vinos", lang);
@@ -436,3 +492,110 @@ document.addEventListener("DOMContentLoaded", ()=>{
   initReservaButton();
   applyLang(getInitialLang());
 });
+
+/* =========================================================
+   TRABAJA CON NOSOTROS — envío del formulario
+   ---------------------------------------------------------
+   Pega aquí la URL de tu Google Apps Script (termina en /exec).
+   Instrucciones en LEEME-EMPLEO.md
+   ========================================================= */
+const EMPLEO_ENDPOINT = "https://script.google.com/macros/s/AKfycbyxhW4otonGWP-EaZndnK84eRitYGMgFcU9zsMJ39hpsHZoge1IRSCNl7FwFsZ69m7kVg/exec";
+
+(function initJobForm(){
+  const form = document.getElementById("job-form");
+  if(!form) return;
+
+  const fileInput = document.getElementById("jf-cv");
+  const fileLabel = document.querySelector(".jf-file");
+  const fileTxt   = document.querySelector(".jf-file-txt");
+  const statusEl  = document.getElementById("jf-status");
+  const submitBtn = form.querySelector(".jf-submit");
+
+  const MAX_BYTES = 5 * 1024 * 1024;
+  const OK_EXT = ["pdf","doc","docx","jpg","jpeg","png"];
+
+  const t = k => {
+    const lang = document.documentElement.lang === "en" ? "en" : "es";
+    return (I18N[lang] && I18N[lang][k]) || "";
+  };
+  const say = (key, cls) => {
+    statusEl.textContent = t(key);
+    statusEl.className = "jf-status" + (cls ? " " + cls : "");
+  };
+
+  // Mostrar el nombre del archivo elegido
+  fileInput.addEventListener("change", () => {
+    const f = fileInput.files[0];
+    if(!f){
+      fileLabel.classList.remove("has-file");
+      fileTxt.dataset.file = "0";
+      fileTxt.textContent = t("job.cv.ph");
+      return;
+    }
+    const kb = f.size > 1048576
+      ? (f.size/1048576).toFixed(1) + " MB"
+      : Math.max(1, Math.round(f.size/1024)) + " KB";
+    fileLabel.classList.add("has-file");
+    fileTxt.dataset.file = "1";
+    fileTxt.dataset.name = `${f.name} · ${kb}`;
+    fileTxt.textContent  = fileTxt.dataset.name;
+    statusEl.textContent = "";
+  });
+
+  const toBase64 = file => new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload  = () => resolve(String(r.result).split(",")[1]);
+    r.onerror = () => reject(new Error("read"));
+    r.readAsDataURL(file);
+  });
+
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    form.classList.add("tried");
+
+    if(!form.checkValidity()){ say("job.err.fields","err"); return; }
+
+    const file = fileInput.files[0];
+    if(!file){ say("job.err.cv","err"); return; }
+    if(file.size > MAX_BYTES){ say("job.err.size","err"); return; }
+    const ext = (file.name.split(".").pop() || "").toLowerCase();
+    if(!OK_EXT.includes(ext)){ say("job.err.type","err"); return; }
+
+    submitBtn.disabled = true;
+    say("job.sending");
+
+    try{
+      const payload = {
+        nombre:         form.nombre.value.trim(),
+        email:          form.email.value.trim(),
+        telefono:       form.telefono.value.trim(),
+        puesto:         form.puesto.options[form.puesto.selectedIndex].textContent.trim(),
+        disponibilidad: form.disponibilidad.options[form.disponibilidad.selectedIndex].textContent.trim(),
+        inicio:         form.inicio.value.trim(),
+        mensaje:        form.mensaje.value.trim(),
+        idioma:         document.documentElement.lang || "es",
+        cvNombre:       file.name,
+        cvTipo:         file.type || "application/octet-stream",
+        cvBase64:       await toBase64(file)
+      };
+
+      // Sin cabeceras personalizadas: así es una petición "simple" y Apps Script
+      // la acepta sin preflight CORS.
+      const res  = await fetch(EMPLEO_ENDPOINT, { method:"POST", body: JSON.stringify(payload) });
+      const data = await res.json();
+      if(!data || data.ok !== true) throw new Error(data && data.error || "fail");
+
+      form.reset();
+      form.classList.remove("tried");
+      fileLabel.classList.remove("has-file");
+      fileTxt.dataset.file = "0";
+      fileTxt.textContent  = t("job.cv.ph");
+      say("job.ok","ok");
+    }catch(err){
+      console.error("[empleo]", err);
+      say("job.err","err");
+    }finally{
+      submitBtn.disabled = false;
+    }
+  });
+})();
