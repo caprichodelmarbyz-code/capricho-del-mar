@@ -576,3 +576,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offs
   .jf-file-txt{white-space:normal;line-height:1.4}
   .jf-file{align-items:flex-start}
 }
+
+/* ===== Página propia de "Trabaja con nosotros" (empleo.html) ===== */
+.page-empleo .site-header{
+  background:rgba(13,33,56,.96);
+  box-shadow:0 10px 30px -20px rgba(0,0,0,.6);
+}
+.page-empleo .empleo{
+  padding-top:clamp(120px,15vw,180px);
+  min-height:100vh;
+}
